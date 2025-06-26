@@ -12,6 +12,24 @@ body {
     align-items: center;
     padding: 10px 20px;
   }
+
+
+  .welcome-text {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   
   .logo img {
     height: 50px;
