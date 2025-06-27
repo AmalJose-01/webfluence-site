@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webfluence Technology - Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -20,13 +20,18 @@
       line-height: 1.6;
     }
 
+    /* ===== Header Styles ===== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 15px 40px;
       background-color: #f8f9fa;
       border-bottom: 1px solid #ddd;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo img {
@@ -35,22 +40,31 @@
 
     nav ul {
       display: flex;
-      gap: 20px;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 30px;
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #333;
       font-weight: 600;
-      transition: color 0.3s;
+      font-size: 1rem;
+      padding: 8px 12px;
+      transition: color 0.3s, background-color 0.3s;
     }
 
     nav ul li a:hover,
     nav ul li a.active {
       color: #007BFF;
+      background-color: #e9ecef;
+      border-radius: 6px;
     }
 
+    /* ===== Main Content ===== */
     main {
       padding: 40px 30px;
     }
@@ -100,6 +114,7 @@
       color: #555;
     }
 
+    /* ===== Footer Styles ===== */
     #footer-container {
       margin-top: 40px;
     }
@@ -112,10 +127,25 @@
       font-size: 0.9em;
       border-top: 1px solid #ddd;
     }
+
+    /* ===== Responsive Navigation (Optional) ===== */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 8px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- ===== Header ===== -->
   <header>
     <div class="logo">
       <img src="../images/Webfluence_Logo.png" alt="Webfluence Logo" />
@@ -129,11 +159,11 @@
     </nav>
   </header>
 
+  <!-- ===== Main Content ===== -->
   <main>
     <section>
       <h1>Our Services</h1>
       <div class="services">
-
         <div class="service-card">
           <img src="../images/social_Media_Manager.png" alt="Social Media Management" />
           <div class="service-content">
@@ -157,22 +187,22 @@
             <p>Custom websites and e-commerce platforms with modern, responsive design tailored for performance and user experience.</p>
           </div>
         </div>
-
       </div>
     </section>
   </main>
 
-  <!-- <div id="footer-container"></div>
+  <!-- ===== Footer Loader ===== -->
+  <div id="footer-container"></div>
 
   <script>
-    // Correct path to footer.html from services.html
+    // Load footer.html dynamically
     fetch('../commonfiles/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer-container').innerHTML = data;
       })
       .catch(error => console.error('Error loading footer:', error));
-  </script> -->
+  </script>
 
 </body>
 </html>

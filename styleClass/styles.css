@@ -1,97 +1,120 @@
+/* ===== Base Styles ===== */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f9f9fb, #eaf0f6);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #444;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* ===== Navigation ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+
+nav ul li a.active {
+  color: #E91E63;
+  font-weight: 700;
+  border-bottom: 2px solid #E91E63;
+}
+
+/* ===== Animated Welcome Text ===== */
+.welcome-text {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+/* ===== Main & Sections ===== */
+main {
+  padding: 20px 30px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  color: #777;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+footer p {
+  margin-bottom: 8px;
+}
+
+/* ===== Social Icons ===== */
+.social-icons a svg {
+  transition: fill 0.3s ease;
+}
+
+.social-icons a:hover svg {
+  fill: #0056b3;
+}
+
+/* ===== Responsive Navigation (Optional) ===== */
+@media (max-width: 768px) {
   header {
-    background: #222;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-
-  .welcome-text {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 50px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1.5s ease-out forwards;
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  
-  .logo img {
-    height: 50px;
-  }
-  
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-top: 10px;
   }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    color: #007BFF;
-  }
-  
-  nav ul li a.active {
-    color: #E91E63;  /* Pink or any special color */
-    font-weight: 700;
-    border-bottom: 2px solid #E91E63; /* Optional underline effect */
-  }
-
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 40px;
-  }
-  
- 
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f1f1f1;
-    color: #777;
-    font-size: 0.9em;
-    border-top: 1px solid #ddd;
-    margin-top: 40px;
-  }
-  
-  footer p {
-    margin-bottom: 8px;
-  }
-  
-  .social-icons a svg {
-    transition: fill 0.3s ease;
-  }
-  
-  .social-icons a:hover svg {
-    fill: #0056b3;
-  }
-  
+}
